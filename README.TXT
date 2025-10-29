@@ -24,3 +24,31 @@ project, and how to fix them.
 
 The project 'zuul-better' contains a version of this project with better
 designed class structure. It includes the fixes discussed in the book.
+
+
+PART 1: ZUUL-BAD
+1.
+This application lets the player explore different locations. 
+The game takes the commands "go"(followed by the direction: north, south, east or west), "help" and "quit".
+   -"go" command takes the player to another location depending on the direction; 
+   -"help" command, when called, gives the player more info on the other commands, and the 
+   -"quit" command makes the player terminate the game.
+5 rooms
+pub <-­> outside <->theater
+         ^
+         |
+         v
+        lab -> office
+2. Parser: reads user input and interprets it as a command and returns it as an object of the Command class.
+   Command:
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+10.
+11.
+12.
+
