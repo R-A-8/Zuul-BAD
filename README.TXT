@@ -41,10 +41,7 @@ pub <-­> outside <->theater
         lab -> office
 2. Parser: reads user input and interprets it as a command and returns it as an object of the Command class.
    Command:
-3.
-4.
-5.
-6.
+3. A Knight tries to save a Princess from an evil Witch.
 7.
 8.
 9.
