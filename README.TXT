@@ -42,9 +42,7 @@ pub <-­> outside <->theater
 2. Parser: reads user input and interprets it as a command and returns it as an object of the Command class.
    Command:
 3. A Knight tries to save a Princess from an evil Witch.
-7.
-8.
-9.
+9. It "Returns a Set view of the keys contained in this map."(from the documentation).
 10.
 11.
 12.
