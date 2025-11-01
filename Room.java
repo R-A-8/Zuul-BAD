@@ -19,6 +19,7 @@ public class Room
     public Room southExit;
     public Room eastExit;
     public Room westExit;
+    
 
     /**
      * Create a room described "description". Initially, it has no exits. 
@@ -78,4 +79,23 @@ public class Room
     {
         return description;
     }
+    
+    public String getExitString(){
+        String exits = "Exits: ";
+        if(northExit != null) {
+                exits += ("north ");
+        }
+        if(eastExit != null) {
+                exits += ("east ");
+        }
+        if(southExit != null) {
+                exits += ("south ");
+        }
+        if(westExit != null) {
+                exits +=("west ");
+        }
+        return exits;
+    }
+    
+
 }
