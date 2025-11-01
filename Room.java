@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Set;
 
 /**
  * Class Room - a room in an adventure game.
@@ -73,20 +74,12 @@ public class Room
     }
     
     public String getExitString(){
-        String exitString = "Exits: ";
-        if(northExit != null) {
-                exitString += ("north ");
+        String returnString = "Exits: ";
+        Set<String> keys = exits.keySet();
+        for(String exit : keys){
+            returnString += " " + exit;
         }
-        if(eastExit != null) {
-                exitString += ("east ");
-        }
-        if(southExit != null) {
-                exitString += ("south ");
-        }
-        if(westExit != null) {
-                exitString +=("west ");
-        }
-        return exitString;
+        return returnString;
     }
     
 
