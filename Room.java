@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 /**
  * Class Room - a room in an adventure game.
  *
@@ -19,6 +21,7 @@ public class Room
     public Room southExit;
     public Room eastExit;
     public Room westExit;
+    private HashMap<String, Room> exits;
     
 
     /**
@@ -29,23 +32,12 @@ public class Room
     public Room(String description) 
     {
         this.description = description;
+        exits = new HashMap<String, Room>();
     }
     
-      public Room getExit(String direction) 
+      public void setExit(String direction, Room neighbor) 
     {
-        if(direction.equals("north")){
-            return northExit;
-        }
-        if(direction.equals("east")){
-            return eastExit;
-        }
-        if(direction.equals("south")){
-            return southExit;
-        }
-        if(direction.equals("west")){
-            return westExit;
-        }
-        return null;
+        exits.put(direction, neighbor);
     }
 
     /**
@@ -59,16 +51,16 @@ public class Room
     public void setExits(Room north, Room east, Room south, Room west) 
     {
         if(north != null) {
-            northExit = north;
+            exits.put("north", north);
         }
         if(east != null) {
-            eastExit = east;
+            exits.put("east", east);
         }
         if(south != null) {
-            southExit = south;
+            exits.put("south", south);
         }
         if(west != null) {
-            westExit = west;
+            exits.put("west", west);
         }
     }
 
@@ -81,20 +73,20 @@ public class Room
     }
     
     public String getExitString(){
-        String exits = "Exits: ";
+        String exitString = "Exits: ";
         if(northExit != null) {
-                exits += ("north ");
+                exitString += ("north ");
         }
         if(eastExit != null) {
-                exits += ("east ");
+                exitString += ("east ");
         }
         if(southExit != null) {
-                exits += ("south ");
+                exitString += ("south ");
         }
         if(westExit != null) {
-                exits +=("west ");
+                exitString +=("west ");
         }
-        return exits;
+        return exitString;
     }
     
 

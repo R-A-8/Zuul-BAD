@@ -41,11 +41,14 @@ public class Game
         WitchTower = new Room("in the Witch's tower");
         
         // initialise room exits 
-        outside.setExits(null, Ballroom, DarkForest, PrincessRoom);
-        Ballroom.setExits(null, null, null, outside);
-        PrincessRoom.setExits(null, outside, null, null);
-        DarkForest.setExits(outside, WitchTower, null, null);
-        WitchTower.setExits(null, null, null, DarkForest);
+        outside.setExit("east", Ballroom);
+        outside.setExit("south",DarkForest);
+        outside.setExit("west", PrincessRoom);
+        Ballroom.setExit("west", outside);
+        PrincessRoom.setExit("east", outside);
+        DarkForest.setExit("north", outside);
+        DarkForest.setExit("east", WitchTower);
+        WitchTower.setExit("west", DarkForest);
 
         // start game outside
         currentRoom = outside;  
