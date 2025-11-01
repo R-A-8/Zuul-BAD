@@ -18,6 +18,7 @@ public class Game
 {
     private Parser parser;
     private Room currentRoom;
+   
     
     /**
      * Create the game and initialise its internal map.
@@ -109,6 +110,9 @@ public class Game
         else if (commandWord.equals("quit")) {
             wantToQuit = quit(command);
         }
+        else if (commandWord.equals("look")) {
+            look(command);//question 14
+        }
 
         return wantToQuit;
     }
@@ -144,8 +148,7 @@ public class Game
         String direction = command.getSecondWord();
 
         // Try to leave current room. 
-        Room nextRoom = currentRoom.getExit(direction);
-        
+        Room nextRoom= nextRoom.getExit(direction);
 
         if (nextRoom == null) {
             System.out.println("There is no door!");
@@ -158,8 +161,8 @@ public class Game
     }
 
     public void printLocationInfo(){
-        System.out.println("You are " + currentRoom.getDescription());
-        System.out.print(currentRoom.getExitString());
+        System.out.println("You are " + currentRoom.getLongDescription());
+        System.out.print(currentRoom.getExitString()); 
     }
     
     /** 
@@ -178,4 +181,22 @@ public class Game
             return true;  
         }
     }
+    
+    private void look(Command command) 
+    {
+        if(!command.hasSecondWord()) {
+            // if there is no second word, we don't know where to go...
+            System.out.println("look where?");
+            return;
+        }
+        else{
+            System.out.println("You are " + currentRoom.getLongDescription());
+        }
+        String direction = command.getSecondWord();
+
+        // Try to leave current room. 
+        Room nextRoom= nextRoom.getExit(direction);
+
+    }
+    
 }
