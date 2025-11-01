@@ -113,7 +113,9 @@ public class Game
         else if (commandWord.equals("look")) {
             look(command);//question 14
         }
-
+         else if (commandWord.equals("eat")) {
+            System.out.println("You have eaten now and you are not hungry anymore.");//question 15
+        }
         return wantToQuit;
     }
 
