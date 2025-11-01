@@ -64,4 +64,8 @@ public class Parser
             return new Command(null, word2); 
         }
     }
+    
+    public void showCommand(){
+        commands.showAll(); //Question 16
+    }
 }
