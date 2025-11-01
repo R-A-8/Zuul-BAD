@@ -43,7 +43,6 @@ pub <-­> outside <->theater
    Command:
 3. A Knight tries to save a Princess from an evil Witch.
 9. It "Returns a Set view of the keys contained in this map."(from the documentation).
-10.
-11.
-12.
-
+13.
+17. No, because if you already added the new command to the validCommands array, the showAll method takes it into consideration, so the Game class doesn't need to be changed.
+18. I think using a static method might make the code clearer and quicker to write(since you wouldn't have to create an instance of the class and could simply tie the method directly to the class). But, I think a con would be that there are more limits to what you can do with a static method(?).
