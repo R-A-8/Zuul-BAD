@@ -64,6 +64,7 @@ public class Room
             exits.put("west", west);
         }
     }
+    
     public Room getExit(String direction){
         return exits.get(direction);
     }

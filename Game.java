@@ -163,8 +163,7 @@ public class Game
     }
 
     public void printLocationInfo(){
-        System.out.println("You are " + currentRoom.getLongDescription());
-        System.out.print(currentRoom.getExitString()); 
+        System.out.println(currentRoom.getLongDescription());
     }
     
     /** 
@@ -192,7 +191,7 @@ public class Game
             return;
         }
         else{
-            System.out.println("You are " + currentRoom.getLongDescription());
+            System.out.println(currentRoom.getLongDescription());
         }
         String direction = command.getSecondWord();
 
