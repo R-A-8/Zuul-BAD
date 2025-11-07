@@ -132,7 +132,7 @@ public class Game
         System.out.println("around at the university.");
         System.out.println();
         System.out.println("Your command words are:");
-        parser.showCommands();//Question 16
+        parser.showCommand();//Question 16
     }
 
     /** 
@@ -150,7 +150,7 @@ public class Game
         String direction = command.getSecondWord();
 
         // Try to leave current room. 
-        Room nextRoom= nextRoom.getExit(direction);
+        Room nextRoom= currentRoom.getExit(direction);
 
         if (nextRoom == null) {
             System.out.println("There is no door!");
@@ -197,7 +197,7 @@ public class Game
         String direction = command.getSecondWord();
 
         // Try to leave current room. 
-        Room nextRoom= nextRoom.getExit(direction);
+        Room nextRoom= currentRoom.getExit(direction);
 
     }
     
